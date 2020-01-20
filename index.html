@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aula</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/fdaebfdd57.js" crossorigin="anonymous"></script>
+    <script src='index.js' charset="utf-8"></script>
+</head>
+
+<body>
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(rgba(170, 170, 170, 0.2),rgba(102, 102, 102, 0.2));
+        }
+
+        #app::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        #app::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        #app::-webkit-scrollbar-thumb {
+            background: rgb(87, 0, 153);
+        }
+
+        /* Handle on hover */
+        #app::-webkit-scrollbar-thumb:hover {
+            background: rgb(62, 0, 109);
+        }
+
+        .loader {
+            border: 10px solid #f3f3f3;
+            /* Light grey */
+            border-top: 10px solid #4724a7;
+            /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            position: relative;
+            left: 35%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            margin: 10px;
+            padding: 10px;
+            background: #4724a7;
+            color: #ffffff;
+            width: 200px;
+            height: 50px;
+            font-weight: bolder;
+        }
+
+        .remover {
+            height: 60%;
+            position: relative;
+            top: 20%;
+            background: transparent;
+            color: #ffff;
+            border: none;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+        }
+
+        .remover:hover {
+            color: #ff0000;
+
+        }
+
+        #app {
+            background: #ffff;
+            border: 2px solid rgb(87, 0, 153);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            max-height: 440px;
+            width: 350px;
+            padding: 20px;
+            margin: 20px;
+            overflow-y: auto;
+        }
+
+        #adicionar {
+
+            position: relative;
+            background: rgb(87, 0, 153);
+            color: #ffff;
+            border: none;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+
+        #input {
+            border: 1px solid rgb(87, 0, 153);
+        }
+    </style>
+    <h1 style="text-align: center; color: rgb(87, 0, 153);">Lista De Nomes</h1>
+    <div style="display: flex; justify-content: center;">
+        <div id="app"
+            style="display: flex; flex-direction: column;justify-content: center;align-items: flex-start; width: 300px;">
+            <div class="loader"></div>
+        </div>
+        <div style="display: flex; width: 400px; height: 30px;margin-top:1.5%;">
+            <input type="text" style="border-right: hidden;" id="input">
+            <button type="button" for="#input" id="adicionar">+</button>
+            <span style="color: red;margin-left:20px ;" hidden id="err">Preencha os campos</span>
+        </div>
+    </div>
+</body>
+
+</html>
